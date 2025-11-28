@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - Selam School</title>
+    <link rel="stylesheet" href="Registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="registration-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+
+        <div class="registration-header">
+            <div class="header-icon">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h1>Student Registration</h1>
+            <p>Complete the form below to join Selam School</p>
+        </div>
+
+        <form class="registration-form">
+            <!-- Program Selection -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-school"></i>
+                    <h2>Program Selection</h2>
+                </div>
+                <div class="input-group">
+                    <label for="grade">Register For <span class="required">*</span></label>
+                    <select id="grade" required>
+                        <option value="">Select Grade Level</option>
+                        <option value="grade9">Grade 9</option>
+                        <option value="grade10">Grade 10</option>
+                        <option value="grade11">Grade 11</option>
+                        <option value="grade12">Grade 12</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-user"></i>
+                    <h2>Personal Information</h2>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="firstName">First Name <span class="required">*</span></label>
+                        <input type="text" id="firstName" placeholder="Enter first name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="middleName">Middle Name</label>
+                        <input type="text" id="middleName" placeholder="Enter middle name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input type="text" id="lastName" placeholder="Enter last name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="birthDate">Birth Date <span class="required">*</span></label>
+                        <input type="date" id="birthDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="male" required>
+                                <span class="radio-checkmark"></span>
+                                Male
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="female">
+                                <span class="radio-checkmark"></span>
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Marital Status</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="status" value="single">
+                                <span class="radio-checkmark"></span>
+                                Single
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="status" value="married">
+                                <span class="radio-checkmark"></span>
+                                Married
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Information -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Academic Information</h2>
+                </div>
+                <div class="input-group">
+                    <label for="previousSchool">Previous School Name <span class="required">*</span></label>
+                    <input type="text" id="previousSchool" placeholder="Enter previous school name" required>
+                </div>
+                <div class="input-group">
+                    <label for="transcript">Transcript Attachment <span class="required">*</span></label>
+                    <div class="file-upload">
+                        <input type="file" id="transcript" accept=".pdf,.doc,.docx" required>
+                        <div class="file-info">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Upload transcript document</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-user-plus"></i>
+                    <h2>Emergency Contact</h2>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="emergencyName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="emergencyName" placeholder="Enter full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="relationship">Relationship <span class="required">*</span></label>
+                        <select id="relationship" required>
+                            <option value="">Select Relationship</option>
+                            <option value="father">Father</option>
+                            <option value="mother">Mother</option>
+                            <option value="brother">Brother</option>
+                            <option value="sister">Sister</option>
+                            <option value="uncle">Uncle</option>
+                            <option value="aunt">Aunt</option>
+                            <option value="guardian">Guardian</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="emergencyGender">Gender</label>
+                        <select id="emergencyGender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="emergencyContact">Email/Phone <span class="required">*</span></label>
+                        <input type="text" id="emergencyContact" placeholder="Enter email or phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Address -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h2>Contact Address</h2>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="country">Country <span class="required">*</span></label>
+                        <select id="country" required>
+                            <option value="">Select Country</option>
+                            <option value="ethiopia">Ethiopia</option>
+                            <option value="somalia">Somalia</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="sudan">Sudan</option>
+                            <option value="uganda">Uganda</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="region">Region</label>
+                        <input type="text" id="region" placeholder="Enter region">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="zone">Zone</label>
+                        <input type="text" id="zone" placeholder="Enter zone">
+                    </div>
+                    <div class="input-group">
+                        <label for="street">Street Address</label>
+                        <input type="text" id="street" placeholder="Enter street address">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="home">Home Address</label>
+                    <input type="text" id="home" placeholder="Enter home address">
+                </div>
+            </div>
+
+            <!-- Documents & Payment -->
+            <div class="form-section">
+                <div class="section-header">
+                    <i class="fas fa-file-upload"></i>
+                    <h2>Documents & Payment</h2>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="photo">Attach Photo (3x4, jpg) <span class="required">*</span></label>
+                        <div class="file-upload">
+                            <input type="file" id="photo" accept=".jpg,.jpeg" required>
+                            <div class="file-info">
+                                <i class="fas fa-camera"></i>
+                                <span>Upload 3x4 photo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="idCard">Attach ID (FaydaID/KebelleID) <span class="required">*</span></label>
+                        <div class="file-upload">
+                            <input type="file" id="idCard" accept=".jpg,.jpeg,.pdf" required>
+                            <div class="file-info">
+                                <i class="fas fa-id-card"></i>
+                                <span>Upload ID document</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Registration Fee Payment <span class="required">*</span></label>
+                    <div class="radio-group bank-options">
+                        <label class="radio-option">
+                            <input type="radio" name="bank" value="cbe" required>
+                            <span class="radio-checkmark"></span>
+                            CBE
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="bank" value="hijra">
+                            <span class="radio-checkmark"></span>
+                            Hijra
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="bank" value="awash">
+                            <span class="radio-checkmark"></span>
+                            Awash
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="bank" value="zamzam">
+                            <span class="radio-checkmark"></span>
+                            Zamzam
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms Agreement -->
+            <div class="form-section">
+                <div class="terms-agreement">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        I hereby declare that the information provided is true and accurate. I agree to the 
+                        <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> of Selam School.
+                        <span class="required">*</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Registration
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

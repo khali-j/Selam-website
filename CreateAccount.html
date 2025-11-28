@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Selam School</title>
+    <link rel="stylesheet" href="CreateAccount.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="account-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+
+        <div class="account-card">
+            <div class="account-header">
+                <div class="account-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>Create Account</h1>
+                <p>Join Selam School community</p>
+            </div>
+
+            <form class="account-form">
+                <div class="form-row">
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" placeholder="First Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Middle Name">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <i class="fas fa-phone input-icon"></i>
+                        <input type="tel" placeholder="Phone Number">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" placeholder="Create Password" required>
+                        <i class="fas fa-eye password-toggle"></i>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" placeholder="Confirm Password" required>
+                        <i class="fas fa-eye password-toggle"></i>
+                    </div>
+                </div>
+
+                <div class="password-strength">
+                    <div class="strength-bar">
+                        <div class="strength-level"></div>
+                    </div>
+                </div>
+
+                
+
+                <button type="submit" class="create-btn">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                </button>
+
+                <div class="login-link">
+                    Already have an account? <a href="Menu.html">Sign in here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
