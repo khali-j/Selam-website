@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile - Kalid Jibril Hasen</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ================= GLOBAL RESET ================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* ================= DESIGN SYSTEM (HOME PAGE) ================= */
+    :root {
+      --primary: #1a4d8c;
+      --secondary: #2e7d32;
+      --accent: #ffc107;
+      --light: #f5f9ff;
+      --dark: #0a1931;
+      --success: #43a047;
+    }
+
+    /* ================= PAGE BACKGROUND ================= */
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: var(--light);
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 25, 49, 0.75);
+      z-index: -1;
+    }
+
+    /* ================= BACK LINK ================= */
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link i {
+      margin-right: 6px;
+    }
+
+    /* ================= PROFILE CARD ================= */
+    .profile-card {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* ================= HEADER ================= */
+    .header {
+      background: linear-gradient(135deg, var(--primary), #2962ff);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      opacity: 0.9;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .id-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ================= NAVIGATION ================= */
+    .navigation {
+      display: flex;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .nav-item {
+      padding: 18px 30px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--light);
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-item.active {
+      color: var(--accent);
+      border-bottom: 3px solid var(--accent);
+    }
+
+    /* ================= CONTENT ================= */
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .main-info {
+      flex: 3;
+      padding: 30px;
+      min-width: 300px;
+    }
+
+    .sidebar {
+      flex: 2;
+      padding: 30px;
+      min-width: 260px;
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* ================= SECTIONS ================= */
+    .info-section {
+      margin-bottom: 30px;
+    }
+
+    .info-section h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+    }
+
+    .info-section h2 i {
+      margin-right: 10px;
+      color: var(--accent);
+    }
+
+    /* ================= GRID ================= */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .info-label {
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+
+    .info-value {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    /* ================= STATUS ================= */
+    .highlight {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      border-left: 5px solid var(--success);
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--success);
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+      }
+    }
+
+    /* ================= CONTACT ================= */
+    .contact-info {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .contact-info .info-item {
+      margin-bottom: 12px;
+    }
+
+    /* ================= BADGE ================= */
+    .program-badge {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--secondary), var(--success));
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <a href="Menu.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </a><br />
+
+    <div class="profile-card">
+      <div class="header">
+        <h1>Kalid Jibril Hasen</h1>
+        <p>Software Engineering Student</p>
+        <div class="id-badge">UGR/188299/16</div>
+      </div>
+
+      <div class="navigation">
+        <div class="nav-item active">My Info</div>
+      </div>
+
+      <div class="content">
+        <div class="main-info">
+          <div class="info-section">
+            <h2><i class="fas fa-graduation-cap"></i> Academic Information</h2>
+
+            <div class="info-grid">
+              <div>
+                <div class="info-label">Full Name</div>
+                <div class="info-value">Kalid Jibril Hasen</div>
+              </div>
+
+              <div>
+                <div class="info-label">ID Number</div>
+                <div class="info-value">UGR/188299/16</div>
+              </div>
+
+              <div>
+                <div class="info-label">Admission Year</div>
+                <div class="info-value">2023/2024</div>
+              </div>
+
+              <div>
+                <div class="info-label">Department</div>
+                <div class="info-value">Computing (EIT-M)</div>
+              </div>
+
+              <div>
+                <div class="info-label">Program</div>
+                <div class="info-value">Software Engineering</div>
+              </div>
+
+              <div>
+                <div class="info-label">Class Year</div>
+                <div class="info-value">3rd Year</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <h2><i class="fas fa-chart-line"></i> Current Status</h2>
+
+            <div class="highlight">
+              <span class="status-indicator"></span>
+              2025/2026 – 1st Semester (Active)
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="info-section">
+            <h2><i class="fas fa-university"></i> Institution</h2>
+
+            <div class="info-label">College</div>
+            <div class="info-value">EIT – Mekelle</div>
+
+            <div class="info-label" style="margin-top:15px;">Program Status</div>
+            <div class="info-value">
+              Undergraduate Regular
+              <div class="program-badge">Active</div>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <h2><i class="fas fa-address-card"></i> Contact</h2>
+
+            <div class="contact-info">
+              <div class="info-item">
+                <strong>Email:</strong> khaalidjibriil26@gmail.com
+              </div>
+              <div class="info-item">
+                <strong>Phone:</strong> +251 934 843 554
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
